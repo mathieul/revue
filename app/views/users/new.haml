@@ -1,8 +1,14 @@
 - title "Sign Up"
+- content_for :sidebar do
+  %p
+    Already have an account?
+    %br
+    = link_to 'Log in', login_path
 
 %p
-  Already have an account?
-  = link_to 'Log In', login_path
+  Please fill-up the information below to sign up to
+  %strong Revue
+  service.
 
 - form_for @user do |f|
   = f.error_messages
@@ -12,9 +18,11 @@
     = f.text_field :login
   %p
     = f.label :name
+    %br
     = f.text_field :name
   %p
     = f.label :email, 'Email Address'
+    %br
     = f.text_field :email
   %p
     = f.label :password
@@ -24,4 +32,7 @@
     = f.label :password_confirmation, "Confirm Password"
     %br
     = f.password_field :password_confirmation
-  %p= f.submit "Sign Up"
+  %p
+    = f.submit "Sign up"
+    or
+    = link_to "Cancel", root_path
