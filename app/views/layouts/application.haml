@@ -14,6 +14,9 @@
         #yui-main
           .yui-b
             #content
+              - flash.each do |name, msg|
+                %div{:id => "flash_#{name}"}= h msg
+
               = yield
 
         .yui-b
@@ -21,4 +24,4 @@
             = yield :sidebar
 
       #ft
-        &copy; 2009 zlaj
+        &copy; 2009 Zlaj

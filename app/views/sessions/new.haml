@@ -1,0 +1,21 @@
+- title "Log In"
+- content_for :sidebar do
+  %p
+    Don't have an account yet?
+    %br
+    = link_to 'Sign up', signup_path
+
+- form_tag session_path do
+  %p
+    = label_tag 'login'
+    %br
+    = text_field_tag :login
+  %p
+    = label_tag 'password'
+    %br
+    = password_field_tag :password
+  %p
+    = check_box_tag 'remember_me', '1', @remember_me
+    = label_tag 'remember_me', 'Remember me'
+  %p
+    = submit_tag 'Log in'
