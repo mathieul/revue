@@ -2,7 +2,24 @@
 %html
   %head
     %title= h(yield(:title) || 'Untitled')
-    = stylesheet_link_tag 'reset', 'application'
+    = stylesheet_link_tag 'reset-fonts-grids', 'application'
     = yield :head
   %body
-    = yield
+    #doc3.yui-t5
+      #hd
+        - if show_title?
+          %h1= h(yield(:title))
+
+      #bd
+        #yui-main
+          .yui-b
+            #content
+              = yield
+
+        .yui-b
+          #sidebar
+            blah
+            = yield :sidebar
+
+      #ft
+        &copy; 2009 zlaj
