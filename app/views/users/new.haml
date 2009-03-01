@@ -1,0 +1,32 @@
+- title "Sign Up"
+
+%p
+  Already have an account?
+  = link_to 'Log In', login_path
+
+- form_for @user do |f|
+  = f.error_messages
+  %p
+    = f.label :login
+    %br
+    = f.text_field :login
+  
+  %p
+    = f.label :name
+    = f.text_field :name
+
+  %p
+    = f.label :email, 'Email Address'
+    = f.text_field :email
+  
+  %p
+    = f.label :password
+    %br
+    = f.password_field :password
+
+  %p
+    = f.label :password_confirmation, "Confirm Password"
+    %br
+    = f.password_field :password_confirmation
+
+  %p= f.submit "Sign Up"
