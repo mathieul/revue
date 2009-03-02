@@ -16,6 +16,10 @@
               \-
               = h(yield(:title))
 
+        #navigation
+          = segmented_button('Home', root_path, :active, :left)
+          = segmented_button('Code Reviews', root_path, :unactive, :right)
+
       #bd
         #yui-main
           .yui-b
