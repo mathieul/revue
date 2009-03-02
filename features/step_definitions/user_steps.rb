@@ -95,7 +95,7 @@ end
 
 def log_out!
   log_out
-  response.should redirect_to('/')
+  response.should redirect_to(root_path)
   follow_redirect!
 end
 
@@ -108,7 +108,7 @@ end
 def create_user!(user_type, user_params)
   user_params['password_confirmation'] ||= user_params['password'] ||= user_params['password']
   create_user user_params
-  response.should redirect_to('/')
+  response.should redirect_to(root_path)
   follow_redirect!
 
 end
@@ -125,7 +125,7 @@ end
 
 def log_in_user! *args
   log_in_user *args
-  response.should redirect_to('/')
+  response.should redirect_to(root_path)
   follow_redirect!
   response.should have_flash("notice", /Logged in successfully/)
 end

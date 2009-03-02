@@ -14,7 +14,7 @@ class AuthenticatedGenerator < Rails::Generator::NamedBase
                 :controller_class_name,
                 :controller_singular_name,
                 :controller_plural_name,
-                :controller_routing_name,                 # new_session_path
+                :controller_routing_name,                 # login_path
                 :controller_routing_path,                 # /session/new
                 :controller_controller_name,              # sessions
                 :controller_file_name
@@ -417,7 +417,7 @@ protected
       :controller_class_name,
       :controller_singular_name,
       :controller_plural_name,
-      :controller_routing_name,                 # new_session_path
+      :controller_routing_name,                 # login_path
       :controller_routing_path,                 # /session/new
       :controller_controller_name,              # sessions
       :controller_file_name,

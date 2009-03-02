@@ -10,28 +10,13 @@
   %strong Revue
   service.
 
-- form_for @user do |f|
-  = f.error_messages
-  %p
-    = f.label :login
-    %br
-    = f.text_field :login
-  %p
-    = f.label :name
-    %br
-    = f.text_field :name
-  %p
-    = f.label :email, 'Email Address'
-    %br
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation, "Confirm Password"
-    %br
-    = f.password_field :password_confirmation
+- labeled_form_for @user do |f|
+  = f.error_message_on :base
+  = f.text_field :login
+  = f.text_field :name
+  = f.text_field :email, :label => 'Email address'
+  = f.password_field :password
+  = f.password_field :password_confirmation, :label => 'Confirm password'
   %p
     = f.submit "Sign up"
     or

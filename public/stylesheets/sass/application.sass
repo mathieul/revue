@@ -58,8 +58,10 @@ body
     :background-color #f6f6f6
 
     label
-      :font-weight bold
+      :width 160px
       :font-size 93%
+      &.required
+        :font-weight bold
 
     input[type="text"], input[type="password"]
       :width 260px
@@ -97,7 +99,8 @@ body
   :width 98%
   :margin 0 0 13px 0
   :padding 4px 6px
-  :border 1px solid #6c6
+  :border-top 1px solid #6c6
+  :border-bottom 1px solid #6c6
   :background-color #cfc
 
 
@@ -105,7 +108,20 @@ body
   :width 98%
   :margin 0 0 13px 0
   :padding 4px 6px
-  :border 1px solid #c66
+  :border-top 1px solid #c66
+  :border-bottom 1px solid #c66
   :background-color #fcc
 
 
+span.inline_error
+  :padding-left 20px
+  :color #d00
+
+
+div.formError
+  :margin-bottom 13px
+  :color #d00
+
+
+.field_error input[type="text"], .field_error input[type="password"]
+  :border 2px solid #d00
