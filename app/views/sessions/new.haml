@@ -7,11 +7,11 @@
 
 - form_tag session_path do
   %p
-    = label_tag 'login'
+    = label_tag 'login', nil, :class => 'required'
     %br
     = text_field_tag :login
   %p
-    = label_tag 'password'
+    = label_tag 'password', nil, :class => 'required'
     %br
     = password_field_tag :password
   %p
