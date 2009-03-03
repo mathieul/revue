@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
   include Authentication::ByPassword
   include Authentication::ByCookieToken
   include Authorization::AasmRoles
+  
+  has_many :code_reviews, :foreign_key => 'owner_id'
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40

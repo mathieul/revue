@@ -6,6 +6,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
   map.resource :session
+  map.resources :code_reviews
 
   map.root :controller => "home"
 

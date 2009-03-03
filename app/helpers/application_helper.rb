@@ -5,8 +5,8 @@ module ApplicationHelper
     form_for(*(args.push(options)), &block)
   end
   
-  def segmented_button(label, url, active, position)
-    class_names = active == :active ? 'button active-' : 'button unactive-'
+  def segmented_button(label, url, position, name)
+    class_names = name == @segmented_name ? 'button active-' : 'button unactive-'
     class_names += position.to_s
     link_to(content_tag(:span, label), url, :class => class_names)
   end

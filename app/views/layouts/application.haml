@@ -17,8 +17,9 @@
               = h(yield(:title))
 
         #navigation
-          = segmented_button('Home', root_path, :active, :left)
-          = segmented_button('Code Reviews', root_path, :unactive, :right)
+          - if logged_in?
+            = segmented_button('Home', root_path, :left, :home)
+            = segmented_button('Code Reviews', code_reviews_path, :right, :code_reviews)
 
       #bd
         #yui-main

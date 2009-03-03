@@ -1,0 +1,25 @@
+- title 'Active Code Reviews'
+
+- content_for :sidebar do
+  %p
+    = link_to 'Submit a new code review', new_code_review_path
+
+%p
+  The following is the list of all the active code reviews.
+
+%p
+  %table
+    %tr
+      %th{:width => '49%'} Title
+      %th{:width => '24%'} Owner
+      %th{:width => '24%'} Due
+      
+    - if @code_reviews.empty?
+      %tr
+        %td{:colspan => 3} There is no active code review at the moment.
+
+    - @code_reviews.each do |review|
+      %tr
+        %td= h review.title
+        %td= h review.owner.name
+        %td= review.due_at
