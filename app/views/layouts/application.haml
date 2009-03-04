@@ -9,6 +9,10 @@
   %body
     #doc3.yui-t5
       #hd
+        - if logged_in?
+          #session-commands
+            = link_to 'Logout', logout_path
+
         %h1
           Revue
           - if show_title?
@@ -16,10 +20,12 @@
               \-
               = h(yield(:title))
 
-        #navigation
-          - if logged_in?
+        - if logged_in?
+          #navigation
             = segmented_button('Home', root_path, :left, :home)
             = segmented_button('Code Reviews', code_reviews_path, :right, :code_reviews)
+          #user-info
+            = h(current_user.name.blank? ? current_user.login : current_user.name)
 
       #bd
         #yui-main
